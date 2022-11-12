@@ -5,6 +5,6 @@ Integrantes:
 
 -Hiago Celestino
 
--Max Pedro
+-Max Pedro Candido de Araujo - 2020028047
 
 -Luzianne Aihzu Sung de Araújo - 2021020066
