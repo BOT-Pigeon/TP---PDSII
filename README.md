@@ -91,13 +91,39 @@
 # USER STORIES 
 
     1. Como jogador, eu quero escolher o elemento do meu pokémon e a sua espécie em específico, assim, o adequando ao meu estilo de jogo.
-
+        - Critérios de aceitação:
+            - Exibir elemento de cada pokémon;
+            - Exibir a espécie do pokémon;
+            - Conseguir escolher um pokémon.
+            
     2. Como jogador, eu quero em cada rodada definir o ataque a ser usado, utilizando de uma estratégia e esperando o tempo de cooldown de cada habilidade.
+        - Critérios de aceitação:
+            - Exibir os ataques do pokémon;
+            - Exibir o dano dos ataques;
+            - Exibir se o ataque pode ser usado no momento ou não;
+            - Conseguir escolher o ataque.
 
     3. Como jogador, eu quero que haja a lógica de percentual de dano do meu pokémon sobre o do meu oponente - e vice-versa - perante a superioridade de um elemento em relação ao outro, com o intuito de estabelecer uma coerência entre os elementos.
-    
-    4. Como jogador, eu quero que cada partida tenha duração de no máximo 10 minutos e, caso nenhum jogador tenha tido sua barra de vida zerada, a partida se encerrará e o ganhador será o com a maior barra de vida, para que as partidas sejam dinâmicas
+        -Critérios de aceitação:
+            - O programa deve conseguir analisar qual elemento é superior;
+            - Também deve conseguir incrementar ou decrementar o dano do pokémon;
+            - Exibir o decremento e incremento dos danos.
 
-    5. Como jogador, eu quero que cada ataque que o oponente der eu tenha uma porcentagem de chance de desviar, dessa forma, aumentando a competitividade do jogo. (Probabilidade de desviar = ataque50)
+    4. Como jogador, eu quero que cada partida tenha duração de no máximo 10 minutos e, caso nenhum jogador tenha tido sua barra de vida zerada, a partida se encerrará e o ganhador será o com a maior barra de vida, para que as partidas sejam dinâmicas
+        - Critérios de aceitação:
+            - Exibir o tempo de jogo ao iniciar uma rodada;
+            - Exibir a vida dos pokémon;
+            - Exibir na tela o vencedor.
+
+    5. Como jogador, eu quero que cada ataque que o oponente der eu tenha uma porcentagem de chance de desviar, dessa forma, aumentando a competitividade do jogo. (Probabilidade de desviar = ataque/50)
+        - Critérios de aceitação:
+            - Exibir a chance de desviar de cada ataque;
+            - Exibir se o pokémon desviou;
+            - Exibir o dano que o pokémon deixou de receber.
 
     6. Como jogador, eu quero conseguir vencer meu oponente quando sua barra de vida chegar a zero ou perder quando a minha chegar a zero para se ter um elemento competitivo no jogo.
+        - Critérios de aceitação:
+            - Exibir a vida dos pokémon;
+            - Exibir o quanto de vida o pokémon perde a cada ataque sofrido;
+            - Exibir o vencedor.
+
