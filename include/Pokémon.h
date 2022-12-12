@@ -1,6 +1,7 @@
 #ifndef POKEMON_H
 #define POKEMON_H
 
+#include <string>
 #include <vector>
 using namespace std;
 
@@ -12,7 +13,9 @@ class Pokemon{
         string _elemento;
     public:
         Pokemon(string nome, int ataque1, int ataque2, int ataque3, int vida, string elemento);
-        int get_ataque();
+        int get_ataque1();
+        int get_ataque2();
+        int get_ataque3();
         int get_vida();
         string get_elemento();
         void decremento_ataque(float decremento);
