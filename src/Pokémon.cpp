@@ -30,13 +30,19 @@ string Pokemon::get_elemento(){
 }
 
 void Pokemon::decremento_ataque(float decremento){
-
+    auto it = ataques.begin();
+    for(it; it!=ataques.end(); it++){
+        *it*=(1-decremento);
+    }
 }
 
 void Pokemon::incremento_ataque(float incremento){
-   
+   auto it = ataques.begin();
+    for(it; it!=ataques.end(); it++){
+        *it*=(1+incremento);
+    }
 }
 
 string Pokemon::receber_ataque(int dano){
-
+    _vida-=dano;
 }
