@@ -21,7 +21,6 @@ class Pokemon{
         void decremento_ataque(float decremento);
         void incremento_ataque(float incremento);
         string receber_ataque(int dano);//Criar método para desvio ou ja implementar aqui.
-        
 };
 
 #endif
