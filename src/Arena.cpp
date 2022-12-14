@@ -1,4 +1,6 @@
 #include "Arena.h"
+#include <cstring>
+
 
 Arena::Arena(Player player1, Player player2){
     players.push_back(player1);
@@ -8,13 +10,23 @@ Arena::Arena(Player player1, Player player2){
 
 
 
+int Arena::balanceamento_por_elemento(Player1.get_pokemon(1)._get_elemento, Player2.get_pokemon(1)._get_elemento){
+
+// neve ganha de agua // agua ganha de fogo // fogo ganha de neve
+// se a função retorna 0 , ninguem tem vantagem ; se retorna 1 , player 1 tem vantagem , se retorna 2 , player 2 tem vantagem 
+int comparador = 0;
+
+char elemento1[5];
+char elemento2[5];
+
+strcpy(elemento1,Player1.get_pokemon(1)._get_elemento);
+strcpy(elemento2,Player2.get_pokemon(1)._get_elemento);
 
 
-
-void Arena::balanceamento_por_elemento(){
-
+comparador = strcpm(elemento1,elemento2);
+if(comparador==0){
+    return 0;
 }
-
 
 
 
@@ -85,10 +97,10 @@ int desviar = 0;
 
 
 cout << player1_nome << endl;
-cout << Player.get_pokemon(1).get_nome() << "Vida: " <<  Player.get_pokemon(1).get_vida() << endl;
+cout << Player1.get_pokemon(1).get_nome() << "Vida: " <<  Player1.get_pokemon(1).get_vida() << endl;
 
 cout << player2_nome << endl;
-cout << Player.get_pokemon(2).get_nome() << "Vida: " <<  Player.get_pokemon(2).get_vida() << endl;
+cout << Player2.get_pokemon(1).get_nome() << "Vida: " <<  Player2.get_pokemon(2).get_vida() << endl;
 
 cout << "Agora é a vez de " ;
 
@@ -96,18 +108,18 @@ if(i%2==0){
 
 cout << player1_nome << endl;
 cout << "Escolha o ataque a ser usado :" <<endl;
-cout << Player.get_pokemon(1).ataque1._nome "-" Player.get_pokemon(1).ataque1._dano <<"de dano"<< "|";
-cout << Player.get_pokemon(1).ataque2._nome "-" Player.get_pokemon(1).ataque2._dano <<"de dano"<< "|";
-cout << Player.get_pokemon(1).ataque3._nome "-" Player.get_pokemon(1).ataque3._dano <<"de dano"<< endl;
+cout << Player1.get_pokemon(1).ataque1._nome "-" Player1.get_pokemon(1).ataque1._dano <<"de dano"<< "|";
+cout << Player1.get_pokemon(1).ataque2._nome "-" Player1.get_pokemon(1).ataque2._dano <<"de dano"<< "|";
+cout << Player1.get_pokemon(1).ataque3._nome "-" Player1.get_pokemon(1).ataque3._dano <<"de dano"<< endl;
 
 cin >> ataque_usado;
 desviar = desviou(ataque_usado);
 
 if(desviar==1){
-cout << "O " << Player.get_pokemon(2).get_nome() << " do jogador "<< player2_nome <<" desviou!" << endl;
+cout << "O " << Player.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" desviou!" << endl;
 } else {
 ataque(agressor ,atacado ,ataque_usado);
-cout << "O " << Player.get_pokemon(2).get_nome() << " do jogador "<< player2_nome <<" recebeu" << "" << " de dano"<< endl;
+cout << "O " << Player2.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" recebeu" << "" << " de dano"<< endl;
 }
 
 } 
@@ -116,18 +128,18 @@ else {
 
 cout << player2_nome << endl;
 cout << "Escolha o ataque a ser usado :" <<endl;
-cout << Player.get_pokemon(2).ataque1._nome "-" Player.get_pokemon(2).ataque1._dano <<"de dano"<< "|";
-cout << Player.get_pokemon(2).ataque2._nome "-" Player.get_pokemon(2).ataque2._dano <<"de dano"<< "|";
-cout << Player.get_pokemon(2).ataque3._nome "-" Player.get_pokemon(2).ataque3._dano <<"de dano"<< endl;
+cout << Player2.get_pokemon(1).ataque1._nome "-" Player2.get_pokemon(1).ataque1._dano <<"de dano"<< "|";
+cout << Player2.get_pokemon(1).ataque2._nome "-" Player2.get_pokemon(1).ataque2._dano <<"de dano"<< "|";
+cout << Player2.get_pokemon(1).ataque3._nome "-" Player2.get_pokemon(1).ataque3._dano <<"de dano"<< endl;
 
 cin >> ataque_usado;
 desviar = desviou(ataque_usado);
 
 if(desviar==1){
-cout << "O " << Player.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" desviou!" << endl;
+cout << "O " << Player1.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" desviou!" << endl;
 } else {
 ataque(agressor ,atacado ,ataque_usado);    
-cout << "O " << Player.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" recebeu" << "" << " de dano"<< endl;
+cout << "O " << Player1.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" recebeu" << "" << " de dano"<< endl;
 }
 
 }
