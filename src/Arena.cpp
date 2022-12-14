@@ -92,7 +92,11 @@ return true;
 
 
 
-string Arena::ataque(Pokemon agressor, Pokemon atacado, int ataque_usado){
+string Arena::ataque(Pokemon agressor, Pokemon atacado,vantagem,int ataque_usado){
+
+    // se vantagem == Player[índice] (ou seja, se vantagem = 1 e player 1 joga ) {
+    // dano_causado = Player[Indice].get_pokemon(1).ataque[ataque_usado]._dano * 1,25
+    //}
 
 }
 
@@ -106,8 +110,8 @@ void Arena::game(){
 //Jogo acontece aqui;
         /*Faz o balanceamento por elemento
         Entra num loop onde ocorrerá as rodadas de forma alternada entre os jogadores
-        Será printado na tela
 
+        Será printado na tela :
         *nome do player1*
             *nome do pokemon do player1* - Vida: Y
         *nome do player2*
@@ -133,11 +137,10 @@ void Arena::game(){
 
         */
 
+
+
+
 int i = 0;
-
-
-
-
 int vantagem;
 vantagem = Arena::balanceamento_por_elemento(Player1.get_pokemon(1)._get_elemento, Player2.get_pokemon(1)._get_elemento);
 
@@ -175,7 +178,7 @@ desviar = desviou(ataque_usado);
 if(desviar==1){
 cout << "O " << Player.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" desviou!" << endl;
 } else {
-ataque(agressor ,atacado ,ataque_usado);
+ataque(agressor ,atacado ,ataque_usado,vantagem);
 cout << "O " << Player2.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" recebeu" << "" << " de dano"<< endl;
 }
 
@@ -195,7 +198,7 @@ desviar = desviou(ataque_usado);
 if(desviar==1){
 cout << "O " << Player1.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" desviou!" << endl;
 } else {
-ataque(agressor ,atacado ,ataque_usado);    
+ataque(agressor ,atacado ,ataque_usado,vantagem);    
 cout << "O " << Player1.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" recebeu" << "" << " de dano"<< endl;
 }
 
