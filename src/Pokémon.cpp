@@ -1,6 +1,6 @@
 #include "Pokémon.h"
 
-Pokemon::Pokemon(string nome, int ataque1, int ataque2, int ataque3, int vida, string elemento){
+Pokemon::Pokemon(string nome, Ataque ataque1, Ataque ataque2, Ataque ataque3, int vida, string elemento){
     _nome = nome;
     ataques.push_back(ataque1);
     ataques.push_back(ataque2);
@@ -9,16 +9,8 @@ Pokemon::Pokemon(string nome, int ataque1, int ataque2, int ataque3, int vida, s
     _elemento = elemento;
 }
 
-int Pokemon::get_ataque1(){
-    return ataques[0];
-}
-
-int Pokemon::get_ataque2(){
-    return ataques[1];
-}
-
-int Pokemon::get_ataque3(){
-    return ataques[2];
+vector<Ataque> Pokemon::get_ataques(){
+    return ataques;
 }
 
 int Pokemon::get_vida(){
@@ -29,20 +21,21 @@ string Pokemon::get_elemento(){
     return _elemento;
 }
 
-void Pokemon::decremento_ataque(float decremento){
-    auto it = ataques.begin();
-    for(it; it!=ataques.end(); it++){
-        *it*=(1-decremento);
+bool Pokemon::desviou(int dano){
+    random_device semente;
+    mt19937 mt(semente());
+    uniform_int_distribution<int> dist(0,99);
+    if (dist(mt)<=(int)((dano*100)/30)){
+        return 1;
+    }else{
+        return 0;
     }
 }
 
-void Pokemon::incremento_ataque(float incremento){
-   auto it = ataques.begin();
-    for(it; it!=ataques.end(); it++){
-        *it*=(1+incremento);
-    }
+void Pokemon::set_vida(int dano){
+    _vida -= dano;
 }
 
-string Pokemon::receber_ataque(int dano){
-    _vida-=dano;
+void Pokemon::receber_ataque(int dano){
 }
+
