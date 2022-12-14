@@ -135,7 +135,19 @@ void Arena::game(){
 
 int i = 0;
 
+
+
+
+int vantagem;
+vantagem = Arena::balanceamento_por_elemento(Player1.get_pokemon(1)._get_elemento, Player2.get_pokemon(1)._get_elemento);
+
+
 while(Arena::ganhou != true){
+
+// se vantagem = 0 nao muda nada
+// se vantagem = 1 , player 1 tem vantagem
+// se vantagem = 2 , player 2 tem vantagem 
+
 
 
 int desviar = 0; 
