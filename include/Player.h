@@ -5,13 +5,17 @@
 #include "Pokémon.h"
 
 
-class Player : public Pokemon {
+class Player{
     private:
         string _nome;
         int _qnt_vitorias;
+        vector<Pokemon> lista_pokemons;
+        int _qtd_pokemons;
     public:
-        Player(string nome, string nome_pokemon, int dano_ataque1, int dano_ataque2, int dano_ataque3, int vida, string elemento);
+        Player(string nome, vector<Pokemon> pokemons);
         string get_nome();
+        Pokemon get_pokemon(int indice);
         int get_qnt_vitorias();
+        int get_qtd_pokemons();
 };
 #endif
