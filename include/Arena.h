@@ -9,7 +9,7 @@ class Arena{
         vector<Player> players;
     public:
         Arena(Player player1, Player player2);
-        void balanceamento_por_elemento();
+        int balanceamento_por_elemento();
         bool ganhou(_vida);
         string ataque(Pokemon agressor, Pokemon atacado, int ataque_usado);
         void game();//Jogo acontece aqui;
