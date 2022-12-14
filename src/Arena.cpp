@@ -104,7 +104,7 @@ desviar = desviou();
 if(desviar==1){
 cout << "O " << "" << " do jogador "<< player2_nome <<" desviou!" << endl;
 } else {
-cout << "O " << "" << " do jogador "<< player2_nome <<" recebeu" << << " de dano"<< endl;
+cout << "O " << "" << " do jogador "<< player2_nome <<" recebeu" <<  << " de dano"<< endl;
 }
 
 
@@ -119,7 +119,15 @@ cout << ataque1._nome "-" ataque1._dano <<"de dano"<< "|";
 cout << ataque2._nome "-" ataque2._dano <<"de dano"<< "|";
 cout << ataque3._nome "-" ataque3._dano <<"de dano"<< endl;
 
+cin >> ataque_usado ; 
 
+desviar = desviou();
+
+if(desviar==1){
+cout << "O " << "" << " do jogador "<< player1_nome <<" desviou!" << endl;
+} else {
+cout << "O " << "" << " do jogador "<< player1_nome <<" recebeu" <<  << " de dano"<< endl;
+}
 
 }
 
@@ -127,11 +135,7 @@ cout << ataque3._nome "-" ataque3._dano <<"de dano"<< endl;
 
 
 
-
-
-
-
-
+ganhou(_vida);
 i++;
 }
 
