@@ -1,26 +1,27 @@
 #ifndef POKEMON_H
 #define POKEMON_H
 
-#include <string>
+#include <iostream>
 #include <vector>
+#include <random>
+#include "Ataque.h"
+
 using namespace std;
 
 class Pokemon{
     private:
         string _nome;
-        vector<int> ataques;
+        vector<Ataque> ataques;
         int _vida;
         string _elemento;
     public:
-        Pokemon(string nome, int ataque1, int ataque2, int ataque3, int vida, string elemento);
-        int get_ataque1();
-        int get_ataque2();
-        int get_ataque3();
+        Pokemon(string nome, Ataque ataque1, Ataque ataque2, Ataque ataque3, int vida, string elemento);
+        vector<Ataque> get_ataques();
         int get_vida();
         string get_elemento();
-        void decremento_ataque(float decremento);
-        void incremento_ataque(float incremento);
-        string receber_ataque(int dano);//Criar método para desvio ou ja implementar aqui.
+        bool desviou(int dano);
+        void receber_ataque(int dano);
+        void set_vida(int dano);
 };
 
 #endif
