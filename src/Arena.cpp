@@ -75,9 +75,12 @@ void Arena::game(){
 
 
         */
+        
+int i = 0;
+
 while(Arena::ganhou != true){
 
-int i = 0;
+
 int desviar = 0; 
 
 
@@ -97,14 +100,14 @@ cout << ataque1._nome "-" ataque1._dano <<"de dano"<< "|";
 cout << ataque2._nome "-" ataque2._dano <<"de dano"<< "|";
 cout << ataque3._nome "-" ataque3._dano <<"de dano"<< endl;
 
-cin >> ataque_usado ; 
-
-desviar = desviou();
+cin >> ataque_usado;
+desviar = desviou(ataque_usado);
 
 if(desviar==1){
 cout << "O " << "" << " do jogador "<< player2_nome <<" desviou!" << endl;
 } else {
-cout << "O " << "" << " do jogador "<< player2_nome <<" recebeu" <<  << " de dano"<< endl;
+ataque(agressor ,atacado ,ataque_usado);
+cout << "O " << "" << " do jogador "<< player2_nome <<" recebeu" << "" << " de dano"<< endl;
 }
 
 
@@ -119,14 +122,14 @@ cout << ataque1._nome "-" ataque1._dano <<"de dano"<< "|";
 cout << ataque2._nome "-" ataque2._dano <<"de dano"<< "|";
 cout << ataque3._nome "-" ataque3._dano <<"de dano"<< endl;
 
-cin >> ataque_usado ; 
-
-desviar = desviou();
+cin >> ataque_usado;
+desviar = desviou(ataque_usado);
 
 if(desviar==1){
 cout << "O " << "" << " do jogador "<< player1_nome <<" desviou!" << endl;
 } else {
-cout << "O " << "" << " do jogador "<< player1_nome <<" recebeu" <<  << " de dano"<< endl;
+ataque(agressor ,atacado ,ataque_usado);    
+cout << "O " << "" << " do jogador "<< player1_nome <<" recebeu" << "" << " de dano"<< endl;
 }
 
 }
