@@ -14,7 +14,11 @@ int Arena::balanceamento_por_elemento(Player1.get_pokemon(1)._get_elemento, Play
 
 // neve ganha de agua // agua ganha de fogo // fogo ganha de neve
 // se a função retorna 0 , ninguem tem vantagem ; se retorna 1 , player 1 tem vantagem , se retorna 2 , player 2 tem vantagem 
-int comparador = 0;
+
+int comparavel = 0;
+int compneve = 0;
+int compfogo = 0;
+int compagua = 0;
 
 char elemento1[5];
 char elemento2[5];
@@ -22,13 +26,54 @@ char elemento2[5];
 strcpy(elemento1,Player1.get_pokemon(1)._get_elemento);
 strcpy(elemento2,Player2.get_pokemon(1)._get_elemento);
 
+comparavel = strcmp(elemento1,elemento2);
 
-comparador = strcpm(elemento1,elemento2);
-if(comparador==0){
+if(comparavel == 0){
     return 0;
 }
 
+//comparador para primeiro = fogo 
 
+compfogo = strcmp(elemento1,"fogo");
+
+if(compfogo == 0){
+    
+comparavel = strcmp(elemento1,elemento2);
+if(comparavel>0){
+    return 2;
+} else { 
+    
+    return 1; 
+
+}
+}
+
+//comparador para primeiro = agua 
+
+compagua = strcmp(elemento1,"agua");
+
+if(compagua ==0){
+    
+comparavel = strcmp(elemento2,"fogo");
+if(comparavel==0){
+    return 1;
+}
+    return 2;
+}
+
+//comparador para primeiro = neve
+
+compneve = strcmp(elemento1,"neve");
+
+if(compneve ==0){
+    
+comparavel = strcmp(elemento2,"fogo");
+if(comparavel==0){
+    return 2;
+}
+    return 1;
+}
+}
 
 
 
