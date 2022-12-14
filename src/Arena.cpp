@@ -75,7 +75,7 @@ void Arena::game(){
 
 
         */
-        
+
 int i = 0;
 
 while(Arena::ganhou != true){
@@ -85,10 +85,10 @@ int desviar = 0;
 
 
 cout << player1_nome << endl;
-cout <<              << "Vida: " <<     << endl;
+cout << Player.get_pokemon(1).get_nome() << "Vida: " <<  Player.get_pokemon(1).get_vida() << endl;
 
 cout << player2_nome << endl;
-cout <<              << "Vida: " <<     << endl;
+cout << Player.get_pokemon(2).get_nome() << "Vida: " <<  Player.get_pokemon(2).get_vida() << endl;
 
 cout << "Agora é a vez de " ;
 
@@ -96,21 +96,19 @@ if(i%2==0){
 
 cout << player1_nome << endl;
 cout << "Escolha o ataque a ser usado :" <<endl;
-cout << ataque1._nome "-" ataque1._dano <<"de dano"<< "|";
-cout << ataque2._nome "-" ataque2._dano <<"de dano"<< "|";
-cout << ataque3._nome "-" ataque3._dano <<"de dano"<< endl;
+cout << Player.get_pokemon(1).ataque1._nome "-" Player.get_pokemon(1).ataque1._dano <<"de dano"<< "|";
+cout << Player.get_pokemon(1).ataque2._nome "-" Player.get_pokemon(1).ataque2._dano <<"de dano"<< "|";
+cout << Player.get_pokemon(1).ataque3._nome "-" Player.get_pokemon(1).ataque3._dano <<"de dano"<< endl;
 
 cin >> ataque_usado;
 desviar = desviou(ataque_usado);
 
 if(desviar==1){
-cout << "O " << "" << " do jogador "<< player2_nome <<" desviou!" << endl;
+cout << "O " << Player.get_pokemon(2).get_nome() << " do jogador "<< player2_nome <<" desviou!" << endl;
 } else {
 ataque(agressor ,atacado ,ataque_usado);
-cout << "O " << "" << " do jogador "<< player2_nome <<" recebeu" << "" << " de dano"<< endl;
+cout << "O " << Player.get_pokemon(2).get_nome() << " do jogador "<< player2_nome <<" recebeu" << "" << " de dano"<< endl;
 }
-
-
 
 } 
 
@@ -118,18 +116,18 @@ else {
 
 cout << player2_nome << endl;
 cout << "Escolha o ataque a ser usado :" <<endl;
-cout << ataque1._nome "-" ataque1._dano <<"de dano"<< "|";
-cout << ataque2._nome "-" ataque2._dano <<"de dano"<< "|";
-cout << ataque3._nome "-" ataque3._dano <<"de dano"<< endl;
+cout << Player.get_pokemon(2).ataque1._nome "-" Player.get_pokemon(2).ataque1._dano <<"de dano"<< "|";
+cout << Player.get_pokemon(2).ataque2._nome "-" Player.get_pokemon(2).ataque2._dano <<"de dano"<< "|";
+cout << Player.get_pokemon(2).ataque3._nome "-" Player.get_pokemon(2).ataque3._dano <<"de dano"<< endl;
 
 cin >> ataque_usado;
 desviar = desviou(ataque_usado);
 
 if(desviar==1){
-cout << "O " << "" << " do jogador "<< player1_nome <<" desviou!" << endl;
+cout << "O " << Player.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" desviou!" << endl;
 } else {
 ataque(agressor ,atacado ,ataque_usado);    
-cout << "O " << "" << " do jogador "<< player1_nome <<" recebeu" << "" << " de dano"<< endl;
+cout << "O " << Player.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" recebeu" << "" << " de dano"<< endl;
 }
 
 }
