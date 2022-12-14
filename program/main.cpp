@@ -7,7 +7,12 @@
 
 using namespace std;
 
-Player Cria_pokemon(string nome, int pokemon){
+int main(){ 
+
+
+Pokemon pokemon = Pokemon("ss",Ataque("Joao", 3),Ataque("Joao", 3),Ataque("Joao", 3),5,"neve");
+
+/*Player Cria_pokemon(string nome, int pokemon){
     switch(pokemon){
         case 1:
             return Player(nome,"juca", 10, 6, 3, 45, "Água");
@@ -40,7 +45,7 @@ Player Cria_pokemon(string nome, int pokemon){
 
 }
 
-int main(){
+
 
     string comeco;
     cin >> comeco;
@@ -60,6 +65,6 @@ int main(){
 
     Arena Batalha = Arena (Player1, Player2);
     Batalha.game();
-
+*/
     return 0;
 }
