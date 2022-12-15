@@ -12,6 +12,7 @@ class Player{
         vector<Pokemon> lista_pokemons;
         int _qtd_pokemons;
     public:
+        Player();
         Player(string nome, vector<Pokemon> pokemons);
         string get_nome();
         Pokemon get_pokemon(int indice);
