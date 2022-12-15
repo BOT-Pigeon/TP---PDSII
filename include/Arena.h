@@ -9,10 +9,10 @@ class Arena{
         Player Player1;
         Player Player2;
     public:
-        Arena(Player* player1, Player* player2);
+        Arena(Player player1_, Player player2_);
         int balanceamento_por_elemento(const char* elemento1,const char* elemento2);
         bool ganhou(int vida1,int vida2);
-        string ataque(Pokemon atacado, int danificado);
+        void ataque(Pokemon atacado, int danificado);
         void game();
 };
 
