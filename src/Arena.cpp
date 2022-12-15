@@ -2,9 +2,9 @@
 #include <cstring>
 
 
-Arena::Arena(Player* player1, Player* player2){
-    Player1 = *player1;
-    Player2 = *player2;
+Arena::Arena(Player player1_, Player player2_){
+    Player1 = player1_;
+    Player2 = player2_;
 }
 
 
@@ -67,7 +67,7 @@ if(comparavel==0){
 }
     return 1;
 }
-    return -255;
+return -255;
 }
 
 
@@ -99,7 +99,7 @@ return false;
 
 
 
-string Arena::ataque(Pokemon atacado,int dano){
+void Arena::ataque(Pokemon atacado,int dano){
     atacado.set_vida(dano);
 }
 
