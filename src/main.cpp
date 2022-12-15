@@ -12,41 +12,59 @@ int main(){
 
 
 
-/*Player Cria_pokemon(string nome, int pokemon){
+Player Cria_player(string nome, int pokemon, vector<Pokemon> Todos_pokemons){
     switch(pokemon){
         case 1:
-            return Player(nome,"juca", 10, 6, 3, 45, "Água");
+            vector<Pokemon> Lista_pokemons;
+            Lista_pokemons.push_back(Todos_pokemons[0]);
+            return Player(nome,Lista_pokemons);
             break;
         case 2:
-            return Player(nome, "Messi", 7, 4, 1, 50, "Água");
+            vector<Pokemon> Lista_pokemons;
+            Lista_pokemons.push_back(Todos_pokemons[1]);
+            return Player(nome,Lista_pokemons);
             break;
         case 3:
-            return Player(nome, "Roland", 4, 2, 1, 75, "Água");
+            vector<Pokemon> Lista_pokemons;
+            Lista_pokemons.push_back(Todos_pokemons[2]);
+            return Player(nome,Lista_pokemons);
             break;
         case 4:
-            return Player(nome, "Maguinho", 10, 7, 2, 45, "Fogo");
+            vector<Pokemon> Lista_pokemons;
+            Lista_pokemons.push_back(Todos_pokemons[3]);
+            return Player(nome,Lista_pokemons);
             break;
         case 5:
-            return Player(nome, "Geno", 6, 5, 2, 68, "Fogo");
+            vector<Pokemon> Lista_pokemons;
+            Lista_pokemons.push_back(Todos_pokemons[4]);
+            return Player(nome,Lista_pokemons);
             break;
         case 6:
-            return Player(nome, "Junin", 4, 3, 3, 87, "Fogo");
+            vector<Pokemon> Lista_pokemons;
+            Lista_pokemons.push_back(Todos_pokemons[5]);
+            return Player(nome,Lista_pokemons);
             break;
         case 7:
-            return Player(nome, "Kuririn", 10, 4, 1, 49, "Neve");
+            vector<Pokemon> Lista_pokemons;
+            Lista_pokemons.push_back(Todos_pokemons[6]);
+            return Player(nome,Lista_pokemons);
             break;
         case 8:
-            return Player(nome, "NNN", 4, 3 ,2, 99, "Neve");
+            vector<Pokemon> Lista_pokemons;
+            Lista_pokemons.push_back(Todos_pokemons[7]);
+            return Player(nome,Lista_pokemons);
             break;
         case 9:
-            return Player(nome, "ABC", 10, 8, 6, 21, "Neve");
+            vector<Pokemon> Lista_pokemons;
+            Lista_pokemons.push_back(Todos_pokemons[8]);
+            return Player(nome,Lista_pokemons);
             break;
     }
 
 }
 
 
-*/
+
 
 char NomePlay1[50];
 char NomePlay2[50];
@@ -72,36 +90,37 @@ cout << endl;
 
 
 cout << "Lista de Pokemons disponíveis :" << endl ;
-
+vector<Pokemon> Lista_todos_pokemons;
 //Pokemons tipo neve
-Pokemon pokemon = Pokemon("Nevasca",Ataque("Nevasca",      10),Ataque("Nevasca",     6),Ataque("Nevasca",      3),80,"neve");
-Pokemon pokemon = Pokemon("Rei_Gelado",Ataque("Rei_Gelado",   15),Ataque("Rei_Gelado",   8),Ataque("Rei_Gelado",   5),46,"neve");
-Pokemon pokemon = Pokemon("Mandaloriano",Ataque("Mandaloriano", 20),Ataque("Mandaloriano", 14),Ataque("Mandaloriano", 8),32,"neve");
+Lista_todos_pokemons.push_back(Pokemon("Nevasca",Ataque("Nevasca",      10),Ataque("Nevasca",     6),Ataque("Nevasca",      3),80,"neve"));
+Lista_todos_pokemons.push_back(Pokemon("Rei_Gelado",Ataque("Rei_Gelado",   15),Ataque("Rei_Gelado",   8),Ataque("Rei_Gelado",   5),46,"neve"));
+Lista_todos_pokemons.push_back(Pokemon("Mandaloriano",Ataque("Mandaloriano", 20),Ataque("Mandaloriano", 14),Ataque("Mandaloriano", 8),32,"neve"));
 
 //Pokemons tipo fogo
-Pokemon pokemon = Pokemon("Esquentadinho",Ataque("Esquentadinho", 8),Ataque("Esquentadinho", 6),Ataque("Esquentadinho", 2),76,"fogo");
-Pokemon pokemon = Pokemon("Charizard",Ataque("Charizard"    , 17),Ataque("Charizard"    , 7),Ataque("Charizard"    , 4),52,"fogo");
-Pokemon pokemon = Pokemon("Monark",Ataque("Monark"       , 19),Ataque("Monark"       , 13),Ataque("Monark"       , 10),29,"fogo");
+Lista_todos_pokemons.push_back(Pokemon("Esquentadinho",Ataque("Esquentadinho", 8),Ataque("Esquentadinho", 6),Ataque("Esquentadinho", 2),76,"fogo"));
+Lista_todos_pokemons.push_back(Pokemon("Charizard",Ataque("Charizard"    , 17),Ataque("Charizard"    , 7),Ataque("Charizard"    , 4),52,"fogo"));
+Lista_todos_pokemons.push_back(Pokemon("Monark",Ataque("Monark"       , 19),Ataque("Monark"       , 13),Ataque("Monark"       , 10),29,"fogo"));
 
 //Pokemons tipo agua
-Pokemon pokemon = Pokemon("Zé_Gotinha",Ataque("Zé_Gotinha", 9),Ataque("Zé_Gotinha", 7),Ataque("Zé_Gotinha", 3),77,"agua");
-Pokemon pokemon = Pokemon("Kratos",Ataque("Kratos",     13),Ataque("Kratos",     9),Ataque("Kratos",     5),48,"agua");
-Pokemon pokemon = Pokemon("Mbappe",Ataque("Mbappe",     29),Ataque("Mbappe",     20),Ataque("Mbappe",     15),25,"agua");
+Lista_todos_pokemons.push_back(Pokemon("Zé_Gotinha",Ataque("Zé_Gotinha", 9),Ataque("Zé_Gotinha", 7),Ataque("Zé_Gotinha", 3),77,"agua"));
+Lista_todos_pokemons.push_back(Pokemon("Kratos",Ataque("Kratos",     13),Ataque("Kratos",     9),Ataque("Kratos",     5),48,"agua"));
+Lista_todos_pokemons.push_back(Pokemon("Mbappe",Ataque("Mbappe",     29),Ataque("Mbappe",     20),Ataque("Mbappe",     15),25,"agua"));
 
 
 vector<Pokemon> Lista_pokemons1;
 vector<Pokemon> Lista_pokemons2;
 
-
+int Poke1Escolhido, Poke2Escolhido;
 
  
 cout <<  NomePlay1 <<" selecione seu pokemon" <<endl;
 cin >> Poke1Escolhido ;
+Player player1 = Cria_player(NomePlay1, Poke1escolhido, Lista_todos_pokemons);
 
 cout <<  NomePlay2 <<" selecione seu pokemon" <<endl;
 cin >> Poke1Escolhido ;
 cout << endl ;
-
+Player player2 = Cria_player(NomePlay2, Poke2escolhido, Lista_todos_pokemons);
 
 /*/
 
