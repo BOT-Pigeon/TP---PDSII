@@ -159,7 +159,7 @@ if(ataque_usado==3){
 
 desviar = desviou(danoso);
 if(desviar==1){
-cout << "O " << Player.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" desviou!" << endl;
+cout << "O " << Player2.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" desviou!" << endl;
 } 
 
 else{
