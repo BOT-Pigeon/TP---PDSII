@@ -10,7 +10,7 @@ Arena::Arena(Player player1, Player player2){
 
 
 
-int Arena::balanceamento_por_elemento(Player1.get_pokemon(1)._get_elemento, Player2.get_pokemon(1)._get_elemento){
+int Arena::balanceamento_por_elemento(const char* elemento1,const char* elemento2){
 
 // neve ganha de agua // agua ganha de fogo // fogo ganha de neve
 // se a função retorna 0 , ninguem tem vantagem ; se retorna 1 , player 1 tem vantagem , se retorna 2 , player 2 tem vantagem 
@@ -19,12 +19,6 @@ int comparavel = 0;
 int compneve = 0;
 int compfogo = 0;
 int compagua = 0;
-
-char elemento1[5];
-char elemento2[5];
-
-strcpy(elemento1,Player1.get_pokemon(1)._get_elemento);
-strcpy(elemento2,Player2.get_pokemon(1)._get_elemento);
 
 comparavel = strcmp(elemento1,elemento2);
 
@@ -76,13 +70,25 @@ if(comparavel==0){
 }
 
 
+// Ganhou recebe as vidas e compara se é maior que 0;
 
+bool Arena::ganhou(int vida1,int vida2){
 
-bool Arena::ganhou(_vida){
+if(vida1<=0){
 
-if(_vida <= 0)
-return true;
+cout << "Jogador 2 é o vencedor" << endl; 
+return true
 
+}
+
+if(vida2<=0){
+
+cout << "Jogador 1 é o vencedor" << endl; 
+return true
+
+}
+
+return false;
 
 }
 
@@ -142,10 +148,11 @@ void Arena::game(){
 
 int i = 0;
 int vantagem;
+bool ganhar = false;
 vantagem = Arena::balanceamento_por_elemento(Player1.get_pokemon(1)._get_elemento, Player2.get_pokemon(1)._get_elemento);
 
 
-while(Arena::ganhou != true){
+while(ganhar != true){
 
 // se vantagem = 0 nao muda nada
 // se vantagem = 1 , player 1 tem vantagem
@@ -204,12 +211,9 @@ cout << "O " << Player1.get_pokemon(1).get_nome() << " do jogador "<< player1_no
 
 }
 
-
-
-
-
-ganhou(_vida);
+ganhar = ganhou(Player1.get_pokemon(1).get_vida,Player2.get_pokemon(1).get_vida);
 i++;
+
 }
 
 
