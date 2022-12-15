@@ -77,14 +77,14 @@ bool Arena::ganhou(int vida1,int vida2){
 if(vida1<=0){
 
 cout << "Jogador 2 é o vencedor" << endl; 
-return true
+return true;
 
 }
 
 if(vida2<=0){
 
 cout << "Jogador 1 é o vencedor" << endl; 
-return true
+return true;
 
 }
 
