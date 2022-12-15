@@ -152,7 +152,7 @@ if(ataque_usado==2){
 }
 
 if(ataque_usado==3){
-    danoso = Player1.get_pokemon(1).get_ataques()[0].get_dano();
+    danoso = Player1.get_pokemon(1).get_ataques()[2].get_dano();
 }
 
 
