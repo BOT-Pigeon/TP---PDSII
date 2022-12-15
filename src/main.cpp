@@ -7,11 +7,6 @@
 
 using namespace std;
 
-int main(){ 
-
-
-
-
 Player Cria_player(string nome, int pokemon, vector<Pokemon> Todos_pokemons){
     switch(pokemon){
         case 1:
@@ -64,7 +59,7 @@ Player Cria_player(string nome, int pokemon, vector<Pokemon> Todos_pokemons){
 }
 
 
-
+int main(){ 
 
 char NomePlay1[50];
 char NomePlay2[50];
@@ -77,17 +72,9 @@ cout << "Qual o nome do primeiro jogador ?" << endl;
 cin >> NomePlay1;
 cout << endl;
 
-
-
-
 cout << "Qual o nome do segundo jogador ?" << endl;
 cin >> NomePlay2;
 cout << endl;
-
-
-
-
-
 
 cout << "Lista de Pokemons disponíveis :" << endl ;
 vector<Pokemon> Lista_todos_pokemons;
@@ -113,12 +100,51 @@ vector<Pokemon> Lista_pokemons2;
 int Poke1Escolhido, Poke2Escolhido;
 
  
-cout <<  NomePlay1 <<" selecione seu pokemon" <<endl;
+cout <<  NomePlay1 <<" selecione seu pokemon:" <<endl;
+
+cout << "Pokemons do tipo Neve:" << endl;
+cout << "Pokemon 1| | Nome: Nevasca       | | Ataques: 10 6  3  | |Vida: 80| |Elemento: Neve " << endl;
+cout << "Pokemon 1| | Nome: Rei_Gelado    | | Ataques: 15 8  5  | |Vida: 46| |Elemento: Neve " << endl;
+cout << "Pokemon 1| | Nome: Mandaloriano  | | Ataques: 20 14 8  | |Vida: 32| |Elemento: Neve " << endl;
+cout << endl;
+
+cout << "Pokemons do tipo Fogo:" << endl;
+cout << "Pokemon 1| | Nome: Esquentadinho | | Ataques: 8  6  2  | |Vida: 76| |Elemento: Fogo " << endl;
+cout << "Pokemon 1| | Nome: Charizard     | | Ataques: 17 7  4  | |Vida: 52| |Elemento: Fogo " << endl;
+cout << "Pokemon 1| | Nome: Monark        | | Ataques: 19 13 10 | |Vida: 29| |Elemento: Fogo " << endl;
+cout << endl;
+
+cout << "Pokemons do tipo Agua:" << endl;
+cout << "Pokemon 1| | Nome: Zé_Gotinha    | | Ataques: 9  7  3  | |Vida: 77| |Elemento: Agua " << endl;
+cout << "Pokemon 1| | Nome: Kratos        | | Ataques: 13 9  5  | |Vida: 48| |Elemento: Agua " << endl;
+cout << "Pokemon 1| | Nome: Mbappe        | | Ataques: 29 20 15 | |Vida: 25| |Elemento: Agua " << endl;
+cout << endl;
+
 cin >> Poke1Escolhido ;
 Player player1 = Cria_player(NomePlay1, Poke1escolhido, Lista_todos_pokemons);
 
-cout <<  NomePlay2 <<" selecione seu pokemon" <<endl;
+cout <<  NomePlay2 <<" selecione seu pokemon:" <<endl;
+
+cout << "Pokemons do tipo Neve:" << endl;
+cout << "Pokemon 1| | Nome: Nevasca       | | Ataques: 10 6  3  | |Vida: 80| |Elemento: Neve " << endl;
+cout << "Pokemon 1| | Nome: Rei_Gelado    | | Ataques: 15 8  5  | |Vida: 46| |Elemento: Neve " << endl;
+cout << "Pokemon 1| | Nome: Mandaloriano  | | Ataques: 20 14 8  | |Vida: 32| |Elemento: Neve " << endl;
+cout << endl;
+
+cout << "Pokemons do tipo Fogo:" << endl;
+cout << "Pokemon 1| | Nome: Esquentadinho | | Ataques: 8  6  2  | |Vida: 76| |Elemento: Fogo " << endl;
+cout << "Pokemon 1| | Nome: Charizard     | | Ataques: 17 7  4  | |Vida: 52| |Elemento: Fogo " << endl;
+cout << "Pokemon 1| | Nome: Monark        | | Ataques: 19 13 10 | |Vida: 29| |Elemento: Fogo " << endl;
+cout << endl;
+
+cout << "Pokemons do tipo Agua:" << endl;
+cout << "Pokemon 1| | Nome: Zé_Gotinha    | | Ataques: 9  7  3  | |Vida: 77| |Elemento: Agua " << endl;
+cout << "Pokemon 1| | Nome: Kratos        | | Ataques: 13 9  5  | |Vida: 48| |Elemento: Agua " << endl;
+cout << "Pokemon 1| | Nome: Mbappe        | | Ataques: 29 20 15 | |Vida: 25| |Elemento: Agua " << endl;
+cout << endl;
+
 cin >> Poke1Escolhido ;
+
 cout << endl ;
 Player player2 = Cria_player(NomePlay2, Poke2escolhido, Lista_todos_pokemons);
 
