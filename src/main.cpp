@@ -48,33 +48,46 @@ int main(){
 
 */
 
+char NomePlay1[50];
+char NomePlay2[50];
+
+
 cout << "Começa o jogo" << endl;
 cout << endl;
 
 cout << "Qual o nome do primeiro jogador ?" << endl;
-cin >> Player1.get_nome();
+cin >> NomePlay1[50];
 cout << endl;
 
+
+
+
+
 cout << "Qual o nome do segundo jogador ?" << endl;
-cin >> Player2.get_nome();
+cin >> NomePlay2[50];
 cout << endl;
+
+
+
+
+
 
 cout << "Lista de Pokemons disponíveis :" << endl ;
 
 //Pokemons tipo neve
-Pokemon pokemon = Pokemon("ss",Ataque("Nevasca",      3),Ataque("Nevasca",      3),Ataque("Nevasca",      3),5,"neve");
-Pokemon pokemon = Pokemon("ss",Ataque("Rei_Gelado",   3),Ataque("Rei_Gelado",   3),Ataque("Rei_Gelado",   3),5,"neve");
-Pokemon pokemon = Pokemon("ss",Ataque("Mandaloriano", 3),Ataque("Mandaloriano", 3),Ataque("Mandaloriano", 3),5,"neve");
+Pokemon pokemon = Pokemon("Nevasca",Ataque("Nevasca",      10),Ataque("Nevasca",     6),Ataque("Nevasca",      3),80,"neve");
+Pokemon pokemon = Pokemon("Rei_Gelado",Ataque("Rei_Gelado",   15),Ataque("Rei_Gelado",   8),Ataque("Rei_Gelado",   5),46,"neve");
+Pokemon pokemon = Pokemon("Mandaloriano",Ataque("Mandaloriano", 20),Ataque("Mandaloriano", 14),Ataque("Mandaloriano", 8),32,"neve");
 
 //Pokemons tipo fogo
-Pokemon pokemon = Pokemon("ss",Ataque("Esquentadinho", 3),Ataque("Esquentadinho", 3),Ataque("Esquentadinho", 3),5,"fogo");
-Pokemon pokemon = Pokemon("ss",Ataque("Charizard"    , 3),Ataque("Charizard"    , 3),Ataque("Charizard"    , 3),5,"fogo");
-Pokemon pokemon = Pokemon("ss",Ataque("Monark"       , 3),Ataque("Monark"       , 3),Ataque("Monark"       , 3),5,"fogo");
+Pokemon pokemon = Pokemon("Esquentadinho",Ataque("Esquentadinho", 8),Ataque("Esquentadinho", 6),Ataque("Esquentadinho", 2),76,"fogo");
+Pokemon pokemon = Pokemon("Charizard",Ataque("Charizard"    , 17),Ataque("Charizard"    , 7),Ataque("Charizard"    , 4),52,"fogo");
+Pokemon pokemon = Pokemon("Monark",Ataque("Monark"       , 19),Ataque("Monark"       , 13),Ataque("Monark"       , 10),29,"fogo");
 
 //Pokemons tipo agua
-Pokemon pokemon = Pokemon("ss",Ataque("Zé_Gotinha", 3),Ataque("Joao", 3),Ataque("Joao", 3),5,"agua");
-Pokemon pokemon = Pokemon("ss",Ataque("Joao", 3),Ataque("Joao", 3),Ataque("Joao", 3),5,"agua");
-Pokemon pokemon = Pokemon("ss",Ataque("Joao", 3),Ataque("Joao", 3),Ataque("Joao", 3),5,"agua");
+Pokemon pokemon = Pokemon("Zé_Gotinha",Ataque("Zé_Gotinha", 9),Ataque("Zé_Gotinha", 7),Ataque("Zé_Gotinha", 3),77,"agua");
+Pokemon pokemon = Pokemon("Kratos",Ataque("Kratos",     13),Ataque("Kratos",     9),Ataque("Kratos",     5),48,"agua");
+Pokemon pokemon = Pokemon("Mbappe",Ataque("Mbappe",     29),Ataque("Mbappe",     20),Ataque("Mbappe",     15),25,"agua");
 
 
 
