@@ -113,6 +113,154 @@ string Arena::ataque(Pokemon agressor, Pokemon atacado,vantagem,int ataque_usado
 
 
 void Arena::game(){
+
+int i = 0;
+int vantagem;
+bool ganhar = false;
+vantagem = Arena::balanceamento_por_elemento(Player1.get_pokemon(1)._get_elemento, Player2.get_pokemon(1)._get_elemento);
+
+
+while(ganhar != true){
+
+int desviar = 0;
+int ataque_usado = 0;
+int  danoso = 0; 
+
+
+cout << player1_nome << endl;
+cout << Player1.get_pokemon(1).get_nome() << "Vida: " <<  Player1.get_pokemon(1).get_vida() << endl;
+
+cout << player2_nome << endl;
+cout << Player2.get_pokemon(1).get_nome() << "Vida: " <<  Player2.get_pokemon(2).get_vida() << endl;
+
+cout << "Agora é a vez de " ;
+
+if(i%2==0){
+
+cout << player1_nome << endl;
+cout << "Escolha o ataque a ser usado :" <<endl;
+cout << Player1.get_pokemon(1).ataque1._nome "-" Player1.get_pokemon(1).ataque1._dano <<"de dano"<< "|";
+cout << Player1.get_pokemon(1).ataque2._nome "-" Player1.get_pokemon(1).ataque2._dano <<"de dano"<< "|";
+cout << Player1.get_pokemon(1).ataque3._nome "-" Player1.get_pokemon(1).ataque3._dano <<"de dano"<< endl;
+
+
+cin >> ataque_usado ;
+
+if(ataque_usado==1){
+    danoso = Player1.get_pokemon(1).ataque1._dano
+}
+
+if(ataque_usado==2){
+    danoso = Player1.get_pokemon(1).ataque2._dano
+}
+
+if(ataque_usado==3){
+    danoso = Player1.get_pokemon(1).ataque3._dano
+}
+
+
+
+
+
+
+
+
+
+desviar = desviou(danoso);
+if(desviar==1){
+cout << "O " << Player.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" desviou!" << endl;
+} 
+
+else{
+
+    if(vantagem==1){
+danoso = danoso * 1.25;
+}
+
+ataque(agressor ,atacado ,danoso);
+cout << "O " << Player2.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" recebeu" << "" << " de dano"<< endl;
+
+}
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+else {
+
+cout << player2_nome << endl;
+cout << "Escolha o ataque a ser usado :" <<endl;
+cout << Player2.get_pokemon(1).ataque1._nome "-" Player2.get_pokemon(1).ataque1._dano <<"de dano"<< "|";
+cout << Player2.get_pokemon(1).ataque2._nome "-" Player2.get_pokemon(1).ataque2._dano <<"de dano"<< "|";
+cout << Player2.get_pokemon(1).ataque3._nome "-" Player2.get_pokemon(1).ataque3._dano <<"de dano"<< endl;
+
+cin >> ataque_usado;
+desviar = desviou(ataque_usado);
+
+if(desviar==1){
+cout << "O " << Player1.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" desviou!" << endl;
+} else {
+
+ataque(agressor ,atacado ,ataque_usado,vantagem);    
+cout << "O " << Player1.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" recebeu" << "" << " de dano"<< endl;
+
+}
+
+}
+
+ganhar = ganhou(Player1.get_pokemon(1).get_vida,Player2.get_pokemon(1).get_vida);
+i++;
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 //Jogo acontece aqui;
         /*Faz o balanceamento por elemento
         Entra num loop onde ocorrerá as rodadas de forma alternada entre os jogadores
@@ -145,78 +293,3 @@ void Arena::game(){
 
 
 
-
-int i = 0;
-int vantagem;
-bool ganhar = false;
-vantagem = Arena::balanceamento_por_elemento(Player1.get_pokemon(1)._get_elemento, Player2.get_pokemon(1)._get_elemento);
-
-
-while(ganhar != true){
-
-// se vantagem = 0 nao muda nada
-// se vantagem = 1 , player 1 tem vantagem
-// se vantagem = 2 , player 2 tem vantagem 
-
-
-
-int desviar = 0; 
-
-
-cout << player1_nome << endl;
-cout << Player1.get_pokemon(1).get_nome() << "Vida: " <<  Player1.get_pokemon(1).get_vida() << endl;
-
-cout << player2_nome << endl;
-cout << Player2.get_pokemon(1).get_nome() << "Vida: " <<  Player2.get_pokemon(2).get_vida() << endl;
-
-cout << "Agora é a vez de " ;
-
-if(i%2==0){
-
-cout << player1_nome << endl;
-cout << "Escolha o ataque a ser usado :" <<endl;
-cout << Player1.get_pokemon(1).ataque1._nome "-" Player1.get_pokemon(1).ataque1._dano <<"de dano"<< "|";
-cout << Player1.get_pokemon(1).ataque2._nome "-" Player1.get_pokemon(1).ataque2._dano <<"de dano"<< "|";
-cout << Player1.get_pokemon(1).ataque3._nome "-" Player1.get_pokemon(1).ataque3._dano <<"de dano"<< endl;
-
-cin >> ataque_usado;
-desviar = desviou(ataque_usado);
-
-if(desviar==1){
-cout << "O " << Player.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" desviou!" << endl;
-} else {
-ataque(agressor ,atacado ,ataque_usado,vantagem);
-cout << "O " << Player2.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" recebeu" << "" << " de dano"<< endl;
-}
-
-} 
-
-else {
-
-cout << player2_nome << endl;
-cout << "Escolha o ataque a ser usado :" <<endl;
-cout << Player2.get_pokemon(1).ataque1._nome "-" Player2.get_pokemon(1).ataque1._dano <<"de dano"<< "|";
-cout << Player2.get_pokemon(1).ataque2._nome "-" Player2.get_pokemon(1).ataque2._dano <<"de dano"<< "|";
-cout << Player2.get_pokemon(1).ataque3._nome "-" Player2.get_pokemon(1).ataque3._dano <<"de dano"<< endl;
-
-cin >> ataque_usado;
-desviar = desviou(ataque_usado);
-
-if(desviar==1){
-cout << "O " << Player1.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" desviou!" << endl;
-} else {
-ataque(agressor ,atacado ,ataque_usado,vantagem);    
-cout << "O " << Player1.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" recebeu" << "" << " de dano"<< endl;
-}
-
-}
-
-ganhar = ganhou(Player1.get_pokemon(1).get_vida,Player2.get_pokemon(1).get_vida);
-i++;
-
-}
-
-
-
-
-}
