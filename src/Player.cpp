@@ -1,5 +1,9 @@
 #include "Player.h"
 
+Player::Player(){
+    
+}
+
 Player::Player(string nome, vector<Pokemon> pokemons){
     _nome = nome;
     lista_pokemons = pokemons;
