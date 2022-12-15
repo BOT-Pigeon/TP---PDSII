@@ -10,7 +10,7 @@ using namespace std;
 int main(){ 
 
 
-Pokemon pokemon = Pokemon("ss",Ataque("Joao", 3),Ataque("Joao", 3),Ataque("Joao", 3),5,"neve");
+
 
 /*Player Cria_pokemon(string nome, int pokemon){
     switch(pokemon){
@@ -46,6 +46,51 @@ Pokemon pokemon = Pokemon("ss",Ataque("Joao", 3),Ataque("Joao", 3),Ataque("Joao"
 }
 
 
+*/
+
+cout << "Começa o jogo" << endl;
+cout << endl;
+
+cout << "Qual o nome do primeiro jogador ?" << endl;
+cin >> Player1.get_nome();
+cout << endl;
+
+cout << "Qual o nome do segundo jogador ?" << endl;
+cin >> Player2.get_nome();
+cout << endl;
+
+cout << "Lista de Pokemons disponíveis :" << endl ;
+
+//Pokemons tipo neve
+Pokemon pokemon = Pokemon("ss",Ataque("Nevasca",      3),Ataque("Nevasca",      3),Ataque("Nevasca",      3),5,"neve");
+Pokemon pokemon = Pokemon("ss",Ataque("Rei_Gelado",   3),Ataque("Rei_Gelado",   3),Ataque("Rei_Gelado",   3),5,"neve");
+Pokemon pokemon = Pokemon("ss",Ataque("Mandaloriano", 3),Ataque("Mandaloriano", 3),Ataque("Mandaloriano", 3),5,"neve");
+
+//Pokemons tipo fogo
+Pokemon pokemon = Pokemon("ss",Ataque("Esquentadinho", 3),Ataque("Esquentadinho", 3),Ataque("Esquentadinho", 3),5,"fogo");
+Pokemon pokemon = Pokemon("ss",Ataque("Charizard"    , 3),Ataque("Charizard"    , 3),Ataque("Charizard"    , 3),5,"fogo");
+Pokemon pokemon = Pokemon("ss",Ataque("Monark"       , 3),Ataque("Monark"       , 3),Ataque("Monark"       , 3),5,"fogo");
+
+//Pokemons tipo agua
+Pokemon pokemon = Pokemon("ss",Ataque("Zé_Gotinha", 3),Ataque("Joao", 3),Ataque("Joao", 3),5,"agua");
+Pokemon pokemon = Pokemon("ss",Ataque("Joao", 3),Ataque("Joao", 3),Ataque("Joao", 3),5,"agua");
+Pokemon pokemon = Pokemon("ss",Ataque("Joao", 3),Ataque("Joao", 3),Ataque("Joao", 3),5,"agua");
+
+
+
+
+
+
+
+ 
+cout << Player1.get_nome() <<" selecione seu pokemon" <<endl;
+cin >> Poke1Escolhido ;
+cout << Player2.get_nome() <<" selecione seu pokemon" <<endl;
+cin >> Poke1Escolhido ;
+cout << endl ;
+
+
+/*/
 
     string comeco;
     cin >> comeco;
