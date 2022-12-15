@@ -1,12 +1,16 @@
 #include "Pokémon.h"
 
-Pokemon::Pokemon(string nome, Ataque ataque1, Ataque ataque2, Ataque ataque3, int vida, string elemento){
+Pokemon::Pokemon(string nome, Ataque ataque1, Ataque ataque2, Ataque ataque3, int vida, const char* elemento){
     _nome = nome;
     ataques.push_back(ataque1);
     ataques.push_back(ataque2);
     ataques.push_back(ataque3);
     _vida = vida;
     _elemento = elemento;
+}
+
+string Pokemon::get_nome(){
+    return _nome;
 }
 
 vector<Ataque> Pokemon::get_ataques(){
@@ -17,7 +21,7 @@ int Pokemon::get_vida(){
     return _vida;
 }
 
-string Pokemon::get_elemento(){
+const char* Pokemon::get_elemento(){
     return _elemento;
 }
 
