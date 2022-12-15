@@ -98,12 +98,9 @@ return false;
 
 
 
-string Arena::ataque(Pokemon agressor, Pokemon atacado,vantagem,int ataque_usado){
+string Arena::ataque(Pokemon agressor,Pokemon atacado,int dano){
 
-    // se vantagem == Player[índice] (ou seja, se vantagem = 1 e player 1 joga ) {
-    // dano_causado = Player[Indice].get_pokemon(1).ataque[ataque_usado]._dano * 1,25
-    //}
-
+    
 }
 
 
@@ -160,12 +157,6 @@ if(ataque_usado==3){
 
 
 
-
-
-
-
-
-
 desviar = desviou(danoso);
 if(desviar==1){
 cout << "O " << Player.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" desviou!" << endl;
@@ -178,50 +169,13 @@ danoso = danoso * 1.25;
 }
 
 ataque(agressor ,atacado ,danoso);
-cout << "O " << Player2.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" recebeu" << "" << " de dano"<< endl;
+
+cout << "O " << Player2.get_pokemon(1).get_nome() << " do jogador "<< player2_nome <<" recebeu" << danoso << " de dano"<< endl;
 
 }
 
 } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-else {
+else{
 
 cout << player2_nome << endl;
 cout << "Escolha o ataque a ser usado :" <<endl;
@@ -229,15 +183,37 @@ cout << Player2.get_pokemon(1).ataque1._nome "-" Player2.get_pokemon(1).ataque1.
 cout << Player2.get_pokemon(1).ataque2._nome "-" Player2.get_pokemon(1).ataque2._dano <<"de dano"<< "|";
 cout << Player2.get_pokemon(1).ataque3._nome "-" Player2.get_pokemon(1).ataque3._dano <<"de dano"<< endl;
 
-cin >> ataque_usado;
-desviar = desviou(ataque_usado);
 
+cin >> ataque_usado ;
+
+if(ataque_usado==1){
+    danoso = Player2.get_pokemon(1).ataque1._dano
+}
+
+if(ataque_usado==2){
+    danoso = Player2.get_pokemon(1).ataque2._dano
+}
+
+if(ataque_usado==3){
+    danoso = Player2.get_pokemon(1).ataque3._dano
+}
+
+
+
+desviar = desviou(danoso);
 if(desviar==1){
 cout << "O " << Player1.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" desviou!" << endl;
-} else {
+} 
 
-ataque(agressor ,atacado ,ataque_usado,vantagem);    
-cout << "O " << Player1.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" recebeu" << "" << " de dano"<< endl;
+else{
+
+    if(vantagem==2){
+danoso = danoso * 1.25;
+}
+
+ataque(agressor ,atacado ,danoso);
+
+cout << "O " << Player1.get_pokemon(1).get_nome() << " do jogador "<< player1_nome <<" recebeu" << danoso << " de dano"<< endl;
 
 }
 
