@@ -56,15 +56,14 @@ cout << "Começa o jogo" << endl;
 cout << endl;
 
 cout << "Qual o nome do primeiro jogador ?" << endl;
-cin >> NomePlay1[50];
+cin >> NomePlay1;
 cout << endl;
 
 
 
 
-
 cout << "Qual o nome do segundo jogador ?" << endl;
-cin >> NomePlay2[50];
+cin >> NomePlay2;
 cout << endl;
 
 
@@ -90,15 +89,16 @@ Pokemon pokemon = Pokemon("Kratos",Ataque("Kratos",     13),Ataque("Kratos",    
 Pokemon pokemon = Pokemon("Mbappe",Ataque("Mbappe",     29),Ataque("Mbappe",     20),Ataque("Mbappe",     15),25,"agua");
 
 
-
-
+vector<Pokemon> Lista_pokemons1;
+vector<Pokemon> Lista_pokemons2;
 
 
 
  
-cout << Player1.get_nome() <<" selecione seu pokemon" <<endl;
+cout <<  NomePlay1 <<" selecione seu pokemon" <<endl;
 cin >> Poke1Escolhido ;
-cout << Player2.get_nome() <<" selecione seu pokemon" <<endl;
+
+cout <<  NomePlay2 <<" selecione seu pokemon" <<endl;
 cin >> Poke1Escolhido ;
 cout << endl ;
 
