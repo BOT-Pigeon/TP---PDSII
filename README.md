@@ -126,4 +126,3 @@
             - Exibir a vida dos pokémon;
             - Exibir o quanto de vida o pokémon perde a cada ataque sofrido;
             - Exibir o vencedor.
-
