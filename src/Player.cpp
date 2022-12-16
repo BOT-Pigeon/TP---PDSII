@@ -1,7 +1,6 @@
-#include "Player.h"
+#include "../include/Player.h"
 
-Player::Player(){
-    
+Player::Player(){    
 }
 
 Player::Player(string nome, vector<Pokemon> pokemons){

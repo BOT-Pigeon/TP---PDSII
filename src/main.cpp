@@ -1,10 +1,9 @@
 #include <iostream>
 #include <string>
 
-#include "Player.h"
-#include "Pokémon.h"
-#include "Arena.h"
-
+#include "../include/Player.h"
+#include "../include/Pokémon.h"
+#include "../include/Arena.h"
 using namespace std;
 
 Player Cria_player(string nome, int pokemon, vector<Pokemon> Todos_pokemons){
@@ -66,9 +65,7 @@ Player Cria_player(string nome, int pokemon, vector<Pokemon> Todos_pokemons){
     }
 }
 
-
 int main() { 
-
     string NomePlayer1;
     string NomePlayer2;
 
@@ -161,19 +158,9 @@ int main() {
     // Após os Player escolherem seus Pokemons, o jogo se inicia
     cout << "INICIO DA BATALHA" << endl;
 
-    int count = 1;
     Arena Batalha = Arena(player1, player2);
-
-    while(player1.get_pokemon(0).get_vida() > 0  || player2.get_pokemon(0).get_vida() > 0 || count < 50) {
-        cout << "Rodada " << count << endl;
-        Batalha.game();
-
-        count++;
-    }
+    Batalha.game();
 
     cout << "FIM DO JOGO" << endl;
-    if(player1.get_pokemon(0).get_vida() <= 0 ) cout << "PLAYER 2 VENCEU O JOGO!" << endl;
-    else if(player2.get_pokemon(0).get_vida() <= 0 ) cout << "PLAYER 1 VENCEU O JOGO!" << endl;
-    
     return 0;
 }

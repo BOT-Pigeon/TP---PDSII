@@ -1,4 +1,4 @@
-#include "Pokémon.h"
+#include "../include/Pokémon.h"
 
 Pokemon::Pokemon(string nome, Ataque ataque1, Ataque ataque2, Ataque ataque3, int vida, const char* elemento){
     _nome = nome;
@@ -39,7 +39,3 @@ bool Pokemon::desviou(int dano){
 void Pokemon::set_vida(int dano){
     _vida -= dano;
 }
-
-void Pokemon::receber_ataque(int dano){
-}
-
