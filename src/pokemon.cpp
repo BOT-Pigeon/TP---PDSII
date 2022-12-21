@@ -1,20 +1,18 @@
-#include "../include/Pokémon.h"
+#include "pokemon.h"
 
-Pokemon::Pokemon(string nome, Ataque ataque1, Ataque ataque2, Ataque ataque3, int vida, const char* elemento){
+Pokemon::Pokemon(string nome, vector<Ataque> ataques, int vida, const char* elemento){
     _nome = nome;
-    ataques.push_back(ataque1);
-    ataques.push_back(ataque2);
-    ataques.push_back(ataque3);
     _vida = vida;
     _elemento = elemento;
+    copy(ataques.begin(), ataques.end(), back_inserter(_ataques));
 }
 
 string Pokemon::get_nome(){
     return _nome;
 }
 
-vector<Ataque> Pokemon::get_ataques(){
-    return ataques;
+Ataque Pokemon::get_ataque(int num_ataque){
+    return _ataques[num_ataque];
 }
 
 int Pokemon::get_vida(){
@@ -36,6 +34,6 @@ bool Pokemon::desviou(int dano){
     }
 }
 
-void Pokemon::set_vida(int dano){
+void Pokemon::recebe_dano(int dano){
     _vida -= dano;
 }

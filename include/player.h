@@ -2,14 +2,14 @@
 #define PLAYER_H
 
 #include <string>
-#include "Pokémon.h"
+#include "pokemon.h"
 
 
 class Player{
     private:
         string _nome;
         int _qnt_vitorias;
-        vector<Pokemon> lista_pokemons;
+        vector<Pokemon> _lista_pokemons;
         int _qtd_pokemons;
     public:
         Player();

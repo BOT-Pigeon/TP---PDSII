@@ -1,13 +1,13 @@
-#include "../include/Player.h"
+#include "player.h"
 
 Player::Player(){    
 }
 
 Player::Player(string nome, vector<Pokemon> pokemons){
     _nome = nome;
-    lista_pokemons = pokemons;
+    _lista_pokemons = pokemons;
     _qnt_vitorias = 0;
-    _qtd_pokemons = lista_pokemons.size();
+    _qtd_pokemons = _lista_pokemons.size();
 }
 
 string Player::get_nome(){
@@ -19,7 +19,7 @@ int Player::get_qnt_vitorias(){
 }
 
 Pokemon Player::get_pokemon(int indice){
-    return lista_pokemons[indice];
+    return _lista_pokemons[indice];
 }
 
 int Player::get_qtd_pokemons(){

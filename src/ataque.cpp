@@ -1,4 +1,4 @@
-#include "../include/Ataque.h"
+#include "ataque.h"
 
 Ataque::Ataque(string nome, int dano){
     _nome = nome;

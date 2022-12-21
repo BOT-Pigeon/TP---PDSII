@@ -4,25 +4,25 @@
 #include <iostream>
 #include <vector>
 #include <random>
-#include "Ataque.h"
+#include "ataque.h"
+#include <string>
 
 using namespace std;
 
 class Pokemon{
     private:
         string _nome;
-        vector<Ataque> ataques;
+        vector<Ataque> _ataques;
         int _vida;
         const char* _elemento;
     public:
-        Pokemon(string nome, Ataque ataque1, Ataque ataque2, Ataque ataque3, int vida, const char* elemento);
+        Pokemon(string nome, vector<Ataque> ataques, int vida, const char* elemento);
         string get_nome();
-        vector<Ataque> get_ataques();
+        Ataque get_ataque(int num_ataque);
         int get_vida();
         const char* get_elemento();
         bool desviou(int dano);
-        void receber_ataque(int dano);
-        void set_vida(int dano);
+        void recebe_dano(int dano);
 };
 
 #endif
