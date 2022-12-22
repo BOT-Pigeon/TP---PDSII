@@ -134,10 +134,8 @@ bool Arena::ganhou(int vida1,int vida2){
     return false;
 }
 
-
-
-
-
+// Ataque recebe as duas vidas, o dano que uma irá receber e a vez que indica quem vai receber o dano. 
+//A função retorna o vida atual do player que recebeu o dano.
 
 int Arena::ataque(int life1,int life2,int dano,int vez){
     
@@ -186,7 +184,7 @@ void Arena::game(){
         int danoso = 0;
         int vez_de = 0;
 
-
+        // Interface para mostrar as informações dos jogadores.
         
         cout << get_player(1).get_nome() << endl;
         cout << get_player(1).get_pokemon(1).get_nome() << " Vida: " << life1 << endl;
@@ -198,7 +196,9 @@ void Arena::game(){
 
         cout << "Agora é a vez de " ;
 
-        if(i % 2 == 0){
+        // Se i é par será a vez do jogador  
+
+        if(i % 2 == 0){ // Ataque do primeiro jogador.
             vez_de = 0;
             cout << get_player(1).get_nome() << endl;
             cout << "Escolha o ataque a ser usado :" << endl;
@@ -220,7 +220,7 @@ void Arena::game(){
                 cout << "O " << get_player(2).get_pokemon(1).get_nome() << " do jogador " << get_player(2).get_nome() << " recebeu " << danoso << " de dano"<< endl;
             }
         }
-        else{
+        else{ // Ataque do segundo jogador.
             vez_de = 1;
             cout << get_player(2).get_nome() << endl;
             cout << "Escolha o ataque a ser usado :" << endl;
@@ -250,6 +250,8 @@ void Arena::game(){
         i++;
     }
 }
+
+//Método que cria uma janela para os players escolherem seus pokémons e que atribui pokemons à esses players.
 
 void Arena::players_escolhem_pokemon(){
     for(auto it = _players.begin(); it != _players.end(); it++){

@@ -1,7 +1,7 @@
 #include "player.h"
 #include "exceptions.h"
 
-Player::Player(string nome){
+Player::Player(string nome){ 
     _nome = nome;
     _qnt_vitorias = 0;
     _qtd_pokemons = 0;
