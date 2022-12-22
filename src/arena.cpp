@@ -174,7 +174,7 @@ void Arena::game(){
                     danoso = danoso * 1.25;
                 }
                 ataque(_players[1].get_pokemon(1), danoso);
-                cout << "O " << get_player(2).get_pokemon(1).get_nome() << " do jogador " << get_player(2).get_nome() << " recebeu" << danoso << " de dano"<< endl;
+                cout << "O " << get_player(2).get_pokemon(1).get_nome() << " do jogador " << get_player(2).get_nome() << " recebeu " << danoso << " de dano"<< endl;
             }
         }
         else{
@@ -195,7 +195,7 @@ void Arena::game(){
                 ataque(_players[0].get_pokemon(1), danoso);
                 cout << get_player(1).get_pokemon(1).get_vida() << endl;
                 cout << get_player(2).get_pokemon(1).get_vida() << endl;
-                cout << "O " << get_player(1).get_pokemon(1).get_nome() << " do jogador " << get_player(1).get_nome() << " recebeu" << danoso << " de dano" << endl;
+                cout << "O " << get_player(1).get_pokemon(1).get_nome() << " do jogador " << get_player(1).get_nome() << " recebeu " << danoso << " de dano" << endl;
             }
         }
 
