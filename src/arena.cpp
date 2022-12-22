@@ -134,31 +134,70 @@ bool Arena::ganhou(int vida1,int vida2){
     return false;
 }
 
-void Arena::ataque(Pokemon atacado,int dano){
-    atacado.recebe_dano(dano);
+
+
+
+
+
+int Arena::ataque(int life1,int life2,int dano,int vez){
+    
+    if(vez==0){
+        
+        life2 = life2 - dano;
+        return life2;
+    } else {
+        
+        life1 = life1 - dano;
+        return life1;
+    }
+    
+  
 }
+
+
+
+
+
+
+
+
+
 
 void Arena::game(){
     int i = 0;
     int vantagem;
+    
+    int life1 = 0;
+    int life2 = 0;
+    
+    life1 = get_player(1).get_pokemon(1).get_vida();
+    life2 = get_player(2).get_pokemon(1).get_vida();
+    
+    
     bool ganhar = false;
-    cout << get_player(1).get_pokemon(1).get_nome() << endl;
+   
     vantagem = balanceamento_por_elemento(get_player(1).get_pokemon(1).get_elemento(), get_player(2).get_pokemon(1).get_elemento());
-    cout << vantagem << endl;
+    
     while(ganhar != true){
+        
+        
         int desviar = 0;
         int ataque_usado = 0;
-        int  danoso = 0; 
+        int danoso = 0;
+        int vez_de = 0;
+
+
 
         cout << get_player(1).get_nome() << endl;
-        cout << get_player(1).get_pokemon(1).get_nome() << "Vida: " << get_player(1).get_pokemon(1).get_vida() << endl;
+        cout << get_player(1).get_pokemon(1).get_nome() << " Vida: " << life1 << endl;
 
         cout << get_player(2).get_nome() << endl;
-        cout << get_player(2).get_pokemon(1).get_nome() << "Vida: " << get_player(2).get_pokemon(1).get_vida() << endl;
+        cout << get_player(2).get_pokemon(1).get_nome() << " Vida: " << life2 << endl;
 
         cout << "Agora é a vez de " ;
 
         if(i % 2 == 0){
+            vez_de = 0;
             cout << get_player(1).get_nome() << endl;
             cout << "Escolha o ataque a ser usado :" << endl;
             get_player(1).get_pokemon(1).exibe_ataques();
@@ -173,11 +212,12 @@ void Arena::game(){
                 if(vantagem==1){
                     danoso = danoso * 1.25;
                 }
-                ataque(_players[1].get_pokemon(1), danoso);
+            life2 = ataque(life1,life2, danoso,vez_de);
                 cout << "O " << get_player(2).get_pokemon(1).get_nome() << " do jogador " << get_player(2).get_nome() << " recebeu " << danoso << " de dano"<< endl;
             }
         }
         else{
+            vez_de = 1;
             cout << get_player(2).get_nome() << endl;
             cout << "Escolha o ataque a ser usado :" << endl;
             get_player(2).get_pokemon(1).exibe_ataques();
@@ -192,14 +232,12 @@ void Arena::game(){
                 if(vantagem == 2){
                     danoso = danoso * 1.25;
                 }
-                ataque(_players[0].get_pokemon(1), danoso);
-                cout << get_player(1).get_pokemon(1).get_vida() << endl;
-                cout << get_player(2).get_pokemon(1).get_vida() << endl;
+            life1 = ataque(life1,life2, danoso,vez_de);
                 cout << "O " << get_player(1).get_pokemon(1).get_nome() << " do jogador " << get_player(1).get_nome() << " recebeu " << danoso << " de dano" << endl;
             }
         }
 
-        ganhar = ganhou(get_player(1).get_pokemon(1).get_vida(), get_player(2).get_pokemon(1).get_vida());
+        ganhar = ganhou(life1, life2);
         i++;
     }
 }
