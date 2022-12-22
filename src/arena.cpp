@@ -187,12 +187,14 @@ void Arena::game(){
         int vez_de = 0;
 
 
-
+        
         cout << get_player(1).get_nome() << endl;
         cout << get_player(1).get_pokemon(1).get_nome() << " Vida: " << life1 << endl;
-
+        cout << endl;
+        
         cout << get_player(2).get_nome() << endl;
         cout << get_player(2).get_pokemon(1).get_nome() << " Vida: " << life2 << endl;
+        cout << endl;
 
         cout << "Agora é a vez de " ;
 
