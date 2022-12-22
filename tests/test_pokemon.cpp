@@ -13,12 +13,16 @@ TEST_CASE("Testando a Classe Pokemon"){
     
     // Testando Construtor
     Pokemon pokemon("Pokemon_1",lista_ataques, 1000, "GELO");
+    
     // Testando get_nome
     CHECK_EQ("Pokemon_1", pokemon.get_nome());
 
     // Testando get_ataque
     CHECK_EQ("Ataque_1", pokemon.get_ataque(0).get_nome());
     
+    // Testando get_qtd_ataques
+    CHECK_EQ(3, pokemon.get_quantidade_ataques());
+
     // Testando get_vida
     CHECK_EQ(1000, pokemon.get_vida());
     

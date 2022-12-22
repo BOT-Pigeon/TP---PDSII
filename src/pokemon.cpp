@@ -1,4 +1,5 @@
 #include "pokemon.h"
+#include "exceptions.h"
 
 Pokemon::Pokemon(string nome, vector<Ataque> ataques, int vida, const char* elemento){
     _nome = nome;
@@ -12,11 +13,18 @@ string Pokemon::get_nome(){
 }
 
 Ataque Pokemon::get_ataque(int num_ataque){
-    return _ataques[num_ataque];
+    if(num_ataque <= 0 || num_ataque > get_quantidade_ataques()){
+        throw OpcaoInvalidaException();
+    }
+    return _ataques[num_ataque -1];
 }
 
 int Pokemon::get_vida(){
     return _vida;
+}
+
+int Pokemon::get_quantidade_ataques(){
+    return _ataques.size();
 }
 
 const char* Pokemon::get_elemento(){
@@ -36,4 +44,13 @@ bool Pokemon::desviou(int dano){
 
 void Pokemon::recebe_dano(int dano){
     _vida -= dano;
+}
+
+void Pokemon::exibe_ataques(){
+    int cont = 0;
+    cout << "Lista de Ataques:" << endl;
+    for(Ataque ataque: _ataques){
+        cont++;
+        cout << "Ataque " << cont << "( " << ataque.get_dano() << ")||" <<  "Dano: " << ataque.get_dano() << endl;
+    }
 }

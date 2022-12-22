@@ -12,8 +12,9 @@ class Player{
         vector<Pokemon> _lista_pokemons;
         int _qtd_pokemons;
     public:
-        Player();
+        Player(string nome);
         Player(string nome, vector<Pokemon> pokemons);
+        void set_pokemon(Pokemon pokemon);
         string get_nome();
         Pokemon get_pokemon(int indice);
         int get_qnt_vitorias();

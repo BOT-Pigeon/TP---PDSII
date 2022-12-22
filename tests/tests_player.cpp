@@ -3,10 +3,31 @@
 #include "player.h"
 #include "ataque.h"
 #include "pokemon.h"
+#include "exceptions.h"
 
 // Utilizando técnica de A(Arrange)A(Act)(Assert) devido ao testes precisarem de elementos anteriores
 // O ACT e o Assert são juntos no caso do doctest
 
+TEST_CASE("Testando construtor do Player sem pokemons"){
+    Player player("Player");
+}
+
+Player player("Player");
+TEST_CASE("Testando get_nome"){   
+    CHECK_EQ("Player",player.get_nome());
+}
+
+TEST_CASE("Testando get_pokemon"){
+    CHECK_THROWS_AS(player.get_pokemon(1), IndicePokemonException);
+}
+
+TEST_CASE("Testando get_qnt_vitorias"){
+    CHECK_EQ(0, player.get_qnt_vitorias());
+}
+
+TEST_CASE("Testando get_qtd_pokemons"){    
+    CHECK_EQ(0, player.get_qtd_pokemons());
+}
 
 TEST_CASE("Testando metódos do Player"){
     // ARRANGE
@@ -23,6 +44,18 @@ TEST_CASE("Testando metódos do Player"){
     lista_pokemon.push_back(pokemon_1);
     lista_pokemon.push_back(pokemon_2);
 
-    // Construtor 
+    // Testando Construtor 
     Player player("Player", lista_pokemon);
+
+    // Testando get_nome    
+    CHECK_EQ("Player",player.get_nome());
+
+    // Testando get_pokemon
+    CHECK_EQ("Pokemon_1", player.get_pokemon(1).get_nome());
+
+    // Testando get_qnt_vitorias
+    CHECK_EQ(0, player.get_qnt_vitorias());
+    
+    // Testando get_qtd_pokemons
+    CHECK_EQ(2, player.get_qtd_pokemons());
 }

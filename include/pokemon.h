@@ -20,9 +20,11 @@ class Pokemon{
         string get_nome();
         Ataque get_ataque(int num_ataque);
         int get_vida();
+        int get_quantidade_ataques();
         const char* get_elemento();
         bool desviou(int dano);
         void recebe_dano(int dano);
+        void exibe_ataques();
 };
 
 #endif
