@@ -20,7 +20,7 @@ class Arena{
         void players_escolhem_pokemon();
         int balanceamento_por_elemento(const char* elemento1, const char* elemento2);
         bool ganhou(int vida1, int vida2);
-        void ataque(Pokemon atacado, int danificado);
+        int ataque(int vitalidade1,int vitalidade2, int danificado,int vez);
         void game();
 };
 
