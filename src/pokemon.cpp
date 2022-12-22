@@ -42,10 +42,6 @@ bool Pokemon::desviou(int dano){
     }
 }
 
-void Pokemon::recebe_dano(int dano){
-    _vida -= dano;
-}
-
 void Pokemon::exibe_ataques(){
     int cont = 0;
     cout << "Lista de Ataques:" << endl;
