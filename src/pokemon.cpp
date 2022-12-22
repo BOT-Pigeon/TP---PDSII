@@ -51,6 +51,6 @@ void Pokemon::exibe_ataques(){
     cout << "Lista de Ataques:" << endl;
     for(Ataque ataque: _ataques){
         cont++;
-        cout << "Ataque " << cont << "( " << ataque.get_dano() << ")||" <<  "Dano: " << ataque.get_dano() << endl;
+        cout << "Ataque " << cont << " || " <<  "Dano: " << ataque.get_dano() << endl;
     }
 }
