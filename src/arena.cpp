@@ -194,7 +194,7 @@ void Arena::game(){
         
         cout << get_player(2).get_nome() << endl;
         cout << get_player(2).get_pokemon(1).get_nome() << " Vida: " << life2 << endl;
-        cout << endl;
+        cout << "---------------------------------------------------------------------------------------------------" << endl;
 
         cout << "Agora é a vez de " ;
 
@@ -207,6 +207,8 @@ void Arena::game(){
             cin >> ataque_usado;
             danoso  = get_player(1).get_pokemon(1).get_ataque(ataque_usado).get_dano();
             desviar = get_player(2).get_pokemon(1).desviou(danoso);
+
+            cout << "---------------------------------------------------------------------------------------------------" << endl;
 
             if(desviar == 1){
                 cout << "O " << get_player(2).get_pokemon(1).get_nome() << " do jogador "<<get_player(2).get_nome() <<" desviou!" << endl;
@@ -228,6 +230,9 @@ void Arena::game(){
             danoso = get_player(2).get_pokemon(1).get_ataque(ataque_usado).get_dano();
 
             desviar = get_player(1).get_pokemon(1).desviou(danoso);
+            
+            cout << "---------------------------------------------------------------------------------------------------" << endl;
+
             if(desviar==1){
                 cout << "O " << get_player(1).get_pokemon(1).get_nome() << " do jogador " << get_player(1).get_nome() << " desviou!" << endl;
             }else{
@@ -239,6 +244,8 @@ void Arena::game(){
             }
         }
 
+        cout << "---------------------------------------------------------------------------------------------------" << endl;
+
         ganhar = ganhou(life1, life2);
         i++;
     }
@@ -246,7 +253,9 @@ void Arena::game(){
 
 void Arena::players_escolhem_pokemon(){
     for(auto it = _players.begin(); it != _players.end(); it++){
+        cout << "---------------------------------------------------------------------------------------------------" << endl;
         exibe_pokemons_disponiveis();
+        cout << endl;
         int pokemon_escolhido;
         cout <<  it->get_nome() << ", selecione seu pokemon: ";
         cin >> pokemon_escolhido;

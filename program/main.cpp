@@ -27,8 +27,9 @@ int main() {
     batalha.players_escolhem_pokemon();
     // Após os Player escolherem seus Pokemons, o jogo se inicia
     cout << endl;
-    cout << "INICIO DA BATALHA" << endl;    
-    cout << endl;
+    cout << "---------------------------------------------------------------------------------------------------" << endl;
+    cout << "INICIO DA BATALHA" << endl; 
+    cout << "---------------------------------------------------------------------------------------------------" << endl;      
     
     batalha.game();
 
