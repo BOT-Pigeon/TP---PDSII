@@ -23,8 +23,7 @@
     Fogo > Neve
     Neve > Água 
     Relação entre elementos
-    Se contra um elemento superior: Ataque -3
-    Se contra um elemento inferior: Ataque +3
+    Se contra um elemento inferior: Ataque x1.25
     Se contra um elemento igual: Ataque permanece 
 
 ### Pré-estabelecido o nível Ataque e a Vida de cada pokémon;
@@ -32,62 +31,68 @@
 ### Possibilidade de vida -> De 1 a 100;
 #
 # Definifição dos Pokémons:
-### Pokémon 1 - Água
-- Vida: 45
+### Mbappe - Água
+- Vida: 25
 - Ataques:
-    - Ataque 1: 10
-    - Ataque 2: 6
-    - Ataque 3: 3
-### Pokémon 2 - Água
-- Vida: 50
+    - Ataque 1: 29
+    - Ataque 2: 20
+    - Ataque 3: 15
+### Kratos - Água
+- Vida: 48
 - Ataque
-    - Ataque 1: 7
-    - Ataque 2: 4
-    - Ataque 3: 1
-### Pokémon 3 - Água
-- Vida: 75
+    - Ataque 1: 13
+    - Ataque 2: 9
+    - Ataque 3: 5
+### Zé Gotinha - Água
+- Vida: 77
 - Ataque
-    - Ataque 1: 4
-    - Ataque 2: 2
-    - Ataque 3: 1
-### Pokémon 4 - Fogo
-- Vida: 45
-- Ataque 	
-    - Ataque 1: 10
+    - Ataque 1: 9
     - Ataque 2: 7
-    - Ataque 3: 2
-### Pokémon 5  - Fogo
-- Vida: 68
-- Ataque 
-    - Ataque 1:6
-    - Ataque 2:5
-    - Ataque 3:2
-### Pokémon 6 - Fogo
-- Vida: 87
-- Ataque 
-    - Ataque 1: 4
-    - Ataque 2: 3
     - Ataque 3: 3
-### Pokémon 7 - Neve
-- Vida: 49
+### Monark - Fogo
+- Vida: 29
+- Ataque 	
+    - Ataque 1: 19
+    - Ataque 2: 13
+    - Ataque 3: 10
+### Charizard  - Fogo
+- Vida: 52
 - Ataque 
-    - Ataque 1: 10
-    - Ataque 2: 4
-    - Ataque 3: 1
-### Pokémon 8 - Neve
-- Vida: 99
+    - Ataque 1:17
+    - Ataque 2:7
+    - Ataque 3:4
+### Esquentadinho - Fogo
+- Vida: 76
+- Ataque 
+    - Ataque 1: 8
+    - Ataque 2: 6
+    - Ataque 3: 2
+### Mandaloriano - Neve
+- Vida: 32
+- Ataque 
+    - Ataque 1: 20
+    - Ataque 2: 14
+    - Ataque 3: 8
+### Rei Gelado - Neve
+- Vida: 46
 - Ataque
-    - Ataque 1:4
-    - Ataque 2:3
-    - Ataque 3:2
-### Pokémon 9 - Neve
-- Vida : 21
+    - Ataque 1:15
+    - Ataque 2:8
+    - Ataque 3:5
+### Nevasca - Neve
+- Vida : 80
 - Ataque 
     - Ataque 1:10
-    - Ataque 2: 8 
-    - Ataque 3: 6
+    - Ataque 2: 6
+    - Ataque 3: 3
 
 #
+# COMO RODAR O CÓDIGO
+    Para rodar o código deve-se usar os seguintes comandosvno terminal dentro da pasta do jogo:
+        make run -> Compila e roda o jogo.
+        make tests -> Compila e roda os testes.
+        make -> apenas compila.
+    
 # USER STORIES 
 
     1. Como jogador, eu quero escolher o elemento do meu pokémon e a sua espécie em específico, assim, o adequando ao meu estilo de jogo.
@@ -109,11 +114,11 @@
             - Também deve conseguir incrementar ou decrementar o dano do pokémon;
             - Exibir o decremento e incremento dos danos.
 
-    4. Como jogador, eu quero que cada partida tenha duração de no máximo 10 minutos e, caso nenhum jogador tenha tido sua barra de vida zerada, a partida se encerrará e o ganhador será o com a maior barra de vida, para que as partidas sejam dinâmicas
+    4. Como jogador, eu quero conseguir jogar mais de uma partida sem ter que abrir e fechar o jogo.
         - Critérios de aceitação:
-            - Exibir o tempo de jogo ao iniciar uma rodada;
-            - Exibir a vida dos pokémon;
-            - Exibir na tela o vencedor.
+            - Exibir opção para jogar novamente;
+            - Conseguir executar toda a rotina do jogo várias vezes;
+            - Exibir na tela que essa funcionalidade funcionou corretamente.
 
     5. Como jogador, eu quero que cada ataque que o oponente der eu tenha uma porcentagem de chance de desviar, dessa forma, aumentando a competitividade do jogo. (Probabilidade de desviar = ataque/50)
         - Critérios de aceitação:
