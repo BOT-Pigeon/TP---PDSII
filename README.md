@@ -12,6 +12,11 @@
     -Luzianne Aihzu Sung de Araújo - 2021020066
 
 #
+# COMO RODAR O CÓDIGO
+    Para rodar o código deve-se usar os seguintes comandos no terminal dentro da pasta do jogo:
+        make       -> Compila.
+        make run   -> Compila e roda o jogo.
+        make tests -> Compila e roda os testes.
 
 # Funcionamento do Jogo
 ### Player 1 e Player 2
@@ -87,11 +92,6 @@
     - Ataque 3: 3
 
 #
-# COMO RODAR O CÓDIGO
-    Para rodar o código deve-se usar os seguintes comandosvno terminal dentro da pasta do jogo:
-        make run -> Compila e roda o jogo.
-        make tests -> Compila e roda os testes.
-        make -> apenas compila.
     
 # USER STORIES 
 
