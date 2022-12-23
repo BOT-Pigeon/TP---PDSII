@@ -21,10 +21,6 @@ TEST_CASE("Testando get_pokemon"){
     CHECK_THROWS_AS(player.get_pokemon(1), IndicePokemonException);
 }
 
-TEST_CASE("Testando get_qnt_vitorias"){
-    CHECK_EQ(0, player.get_qnt_vitorias());
-}
-
 TEST_CASE("Testando get_qtd_pokemons"){    
     CHECK_EQ(0, player.get_qtd_pokemons());
 }
@@ -53,9 +49,6 @@ TEST_CASE("Testando metódos do Player"){
     // Testando get_pokemon
     CHECK_EQ("Pokemon_1", player.get_pokemon(1).get_nome());
 
-    // Testando get_qnt_vitorias
-    CHECK_EQ(0, player.get_qnt_vitorias());
-    
     // Testando get_qtd_pokemons
     CHECK_EQ(2, player.get_qtd_pokemons());
 }

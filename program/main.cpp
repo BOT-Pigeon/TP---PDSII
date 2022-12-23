@@ -13,36 +13,29 @@ Player cria_player(string nome, Pokemon pokemon){
     return Player(nome, lista_pokemons);
 }
 
-int main() { 
-
-    int Jogarnovamente;
-    
+int main() {     
     cout << "-----------------------------------" << endl;
     cout << "           INICIO DO JOGO          " << endl;
     cout << "-----------------------------------" << endl;
     cout << endl;
     cout << endl;
 
-    REFAZ:Arena batalha = Arena();    
-    batalha.players_escolhem_pokemon();
-    // Após os Player escolherem seus Pokemons, o jogo se inicia
-    cout << endl;
-    cout << "---------------------------------------------------------------------------------------------------" << endl;
-    cout << "INICIO DA BATALHA" << endl; 
-    cout << "---------------------------------------------------------------------------------------------------" << endl;      
-    
-    batalha.game();
-
-    cout << "FIM DO JOGO" << endl;
-    
-    cout << "Caso desejar, digite 1 para jogar novamente" << endl;
-
-    cin >> Jogarnovamente;
-    
-    if(Jogarnovamente==1){
+    int jogar = 1; 
+    while(jogar == 1){
+        Arena batalha = Arena();    
+        batalha.players_escolhem_pokemon();
+        // Após os Player escolherem seus Pokemons, o jogo se inicia
+        cout << endl;
+        cout << "---------------------------------------------------------------------------------------------------" << endl;
+        cout << "INICIO DA BATALHA" << endl; 
+        cout << "---------------------------------------------------------------------------------------------------" << endl;      
         
-        goto REFAZ;
-        
+        batalha.game();
+
+        cout << "FIM DO JOGO" << endl;
+        jogar = 0;
+        cout << "Caso desejar, digite 1 para jogar novamente" << endl;
+        cin >> jogar;
     }
     
     return 0;

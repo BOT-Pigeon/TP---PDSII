@@ -18,7 +18,7 @@ TEST_CASE("Testando a Classe Pokemon"){
     CHECK_EQ("Pokemon_1", pokemon.get_nome());
 
     // Testando get_ataque
-    CHECK_EQ("Ataque_1", pokemon.get_ataque(0).get_nome());
+    CHECK_EQ("Ataque_1", pokemon.get_ataque(1).get_nome());
     
     // Testando get_qtd_ataques
     CHECK_EQ(3, pokemon.get_quantidade_ataques());

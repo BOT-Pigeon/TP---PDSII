@@ -3,14 +3,12 @@
 
 Player::Player(string nome){ 
     _nome = nome;
-    _qnt_vitorias = 0;
     _qtd_pokemons = 0;
 }
 
 Player::Player(string nome, vector<Pokemon> pokemons){
     _nome = nome;
     _lista_pokemons = pokemons;
-    _qnt_vitorias = 0;
     _qtd_pokemons = _lista_pokemons.size();
 }
 
@@ -21,10 +19,6 @@ string Player::get_nome(){
 void Player::set_pokemon(Pokemon pokemon){
     _lista_pokemons.push_back(pokemon);
     _qtd_pokemons++;
-}
-
-int Player::get_qnt_vitorias(){
-    return _qnt_vitorias;
 }
 
 Pokemon Player::get_pokemon(int indice){

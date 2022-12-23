@@ -67,7 +67,6 @@ void Arena::set_player(Player player){
     _qtd_players++;
 }
 
-
 int Arena::balanceamento_por_elemento(const char* elemento1, const char* elemento2){
     // neve ganha de agua // agua ganha de fogo // fogo ganha de neve
     // se a função retorna 0 , ninguem tem vantagem ; se retorna 1 , player 1 tem vantagem , se retorna 2 , player 2 tem vantagem 
@@ -119,15 +118,15 @@ int Arena::balanceamento_por_elemento(const char* elemento1, const char* element
 }
 
 // Ganhou recebe as vidas e compara se é maior que 0;
-
 bool Arena::ganhou(int vida1,int vida2){
-    if(vida1<=0){
-        cout << "Jogador 2 é o vencedor" << endl; 
-        return true;
-    }
-
-    if(vida2<=0){
-        cout << "Jogador 1 é o vencedor" << endl; 
+    if(vida1 <= 0 || vida2 <= 0){
+        string nom_jogador_vencedor;
+        if(vida1 == 0){
+            nom_jogador_vencedor = get_player(2).get_nome();
+        }else{
+            nom_jogador_vencedor = get_player(1).get_nome();
+        }
+        cout << "Jogador "<< nom_jogador_vencedor << " é o vencedor!!!" << endl; 
         return true;
     }
 
@@ -136,30 +135,15 @@ bool Arena::ganhou(int vida1,int vida2){
 
 // Ataque recebe as duas vidas, o dano que uma irá receber e a vez que indica quem vai receber o dano. 
 //A função retorna o vida atual do player que recebeu o dano.
-
-int Arena::ataque(int life1,int life2,int dano,int vez){
-    
-    if(vez==0){
-        
+int Arena::ataque(int life1, int life2, int dano, int vez){
+    if(vez == 0){
         life2 = life2 - dano;
         return life2;
-    } else {
-        
+    }else{   
         life1 = life1 - dano;
         return life1;
-    }
-    
-  
+    }  
 }
-
-
-
-
-
-
-
-
-
 
 void Arena::game(){
     int i = 0;
@@ -170,13 +154,10 @@ void Arena::game(){
     
     life1 = get_player(1).get_pokemon(1).get_vida();
     life2 = get_player(2).get_pokemon(1).get_vida();
-    
-    
-    bool ganhar = false;
    
     vantagem = balanceamento_por_elemento(get_player(1).get_pokemon(1).get_elemento(), get_player(2).get_pokemon(1).get_elemento());
     
-    while(ganhar != true){
+    while(!ganhou(life1, life2)){
         
         
         int desviar = 0;
@@ -213,7 +194,7 @@ void Arena::game(){
             if(desviar == 1){
                 cout << "O " << get_player(2).get_pokemon(1).get_nome() << " do jogador "<<get_player(2).get_nome() <<" desviou!" << endl;
             }else{
-                if(vantagem==1){
+                if(vantagem == 1){
                     danoso = danoso * 1.25;
                 }
             life2 = ataque(life1,life2, danoso,vez_de);
@@ -246,13 +227,11 @@ void Arena::game(){
 
         cout << "---------------------------------------------------------------------------------------------------" << endl;
 
-        ganhar = ganhou(life1, life2);
         i++;
     }
 }
 
 //Método que cria uma janela para os players escolherem seus pokémons e que atribui pokemons à esses players.
-
 void Arena::players_escolhem_pokemon(){
     for(auto it = _players.begin(); it != _players.end(); it++){
         cout << "---------------------------------------------------------------------------------------------------" << endl;
